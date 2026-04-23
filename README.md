@@ -2,7 +2,7 @@
 
 A market-structure-driven trading research and visualization system built with Python and Streamlit.
 
-This project focuses on a simple idea:
+This project is built around one core idea:
 
 **Do not treat every market environment the same.  
 Classify market structure first, then study whether a strategy is compatible with that environment.**
@@ -29,6 +29,30 @@ The current version focuses on two strategy families:
 
 - **Trend Breakout**
 - **Trend Pullback**
+
+---
+
+## Product Preview
+
+### 1. Methodology / About
+A dedicated introduction page explaining the system’s research philosophy, market classification logic, and the role of strategies and engine filtering.
+
+![Methodology / About](docs/screenshots/methodology.png)
+
+### 2. Market Dashboard
+A market overview interface for inspecting current structure, background, and regime-related information.
+
+![Market Dashboard](docs/screenshots/dashboard.png)
+
+### 3. Regime Validation Lab
+A validation workspace for reviewing whether the regime classification framework is structurally consistent across historical data.
+
+![Regime Validation Lab](docs/screenshots/validation-lab.png)
+
+### 4. Strategy Lab
+An interactive strategy research page comparing raw strategy trades and engine-filtered trades with detailed trade explanations.
+
+![Strategy Lab](docs/screenshots/strategy-lab.png)
 
 ---
 
@@ -65,7 +89,6 @@ but also:
 The system is divided into four layers.
 
 ### 1. Market State Builder
-
 Builds a market-state dataframe from price data.
 
 This layer is responsible for classifying market structure into multiple context layers, including:
@@ -75,7 +98,6 @@ This layer is responsible for classifying market structure into multiple context
 - fast events
 
 ### 2. Strategy Layer
-
 Generates raw strategy signals based on price structure.
 
 Current strategies:
@@ -84,7 +106,6 @@ Current strategies:
 - `trend_pullback`
 
 ### 3. Engine Layer
-
 The Engine does not invent strategies.  
 Its role is to evaluate whether a raw strategy signal is reasonable under the current market environment.
 
@@ -97,7 +118,6 @@ It can:
 - block entry
 
 ### 4. Strategy Lab
-
 An interactive research interface for comparing:
 
 - original strategy trades
@@ -168,7 +188,6 @@ It is trying to quantify what the **current price behavior most resembles struct
 The current framework uses a multi-layer market-state idea.
 
 ### 1. Mid-Term Structure
-
 This layer answers:
 
 > What kind of structure is currently dominant?
@@ -182,7 +201,6 @@ Examples:
 - high-volatility mixed structure
 
 ### 2. Weekly Background
-
 This layer provides a slower and broader background context.
 
 It helps answer:
@@ -190,7 +208,6 @@ It helps answer:
 > Does the higher-timeframe background support or conflict with the trade idea?
 
 ### 3. Fast Events
-
 This layer detects abnormal or sudden short-term behavior.
 
 Examples:
@@ -209,7 +226,6 @@ It helps answer:
 ## Current Strategies
 
 ### 1. Trend Breakout
-
 A trend-following strategy designed to participate after price breaks important recent structure.
 
 Core idea:
@@ -219,7 +235,6 @@ Core idea:
 - exit when recent swing structure is broken
 
 ### 2. Trend Pullback
-
 A trend-following strategy that waits for a pullback inside an existing trend, then enters when price resumes in the original direction.
 
 Core idea:
