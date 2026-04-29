@@ -307,3 +307,6 @@ Current features include:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
+
+
+Project demo: https://market-structure-strategy-lab.streamlit.app
