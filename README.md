@@ -1,3 +1,5 @@
+Project demo: https://market-structure-strategy-lab.streamlit.app
+
 # Market Structure & Strategy Lab
 
 A market-structure-driven trading research and visualization system built with Python and Streamlit.
@@ -307,6 +309,3 @@ Current features include:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-
-
-Project demo: https://market-structure-strategy-lab.streamlit.app
